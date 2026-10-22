@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — ORCGA Media Limited</title>
+<meta name="description" content="Video production, photography and grading, podcast and audio, digital strategy, and M&amp;E analytics — delivered to broadcast and donor-ready standards.">
+{{FONTS}}
+{{CSS}}
+</head>
+<body>
+{{HEADER}}
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</p>
+      <h1 class="h-display">End-to-end<br>excellence</h1>
+      <p>One pipeline from strategy to final delivery. Every asset is built to a stated objective, produced to international broadcast specification and reported against your KPIs.</p>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section">
+    <div class="wrap">
+
+      <article class="case reveal" id="video" style="border-top:0">
+        <div>
+          <span class="kicker-navy">&mdash; Video production</span>
+          <h2 class="h2" style="margin:12px 0 18px">Documentary &amp; advocacy film</h2>
+          <p>Full pipeline from strategy to final delivery: concept and script, production management, direction, cinematography and location sound, through to a broadcast-ready master.</p>
+          <p>Documentary features, advocacy films, TVCs, corporate and training films, event films and human-interest sequences that put the subject's own voice at the centre.</p>
+          <span class="tag">4K/6K production</span><span class="tag">Broadcast-ready delivery</span>
+        </div>
+        <div class="case__media is-playable" data-youtube="oT_5TM2Djqc" data-title="M-PESA Foundation Academy 10th Anniversary — Keynote by Peter Ndegwa">
+          <img src="assets/mpesa-foundation-academy.png" alt="M-PESA Foundation Academy 10th Anniversary — Keynote by Peter Ndegwa" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <span class="work-card__play" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+      </article>
+
+      <article class="case case--flip reveal" id="photography">
+        <div>
+          <span class="kicker-navy">&mdash; Photography &amp; grading</span>
+          <h2 class="h2" style="margin:12px 0 18px">Stills that carry the story</h2>
+          <p>Event, campaign, field and executive photography with cinematic colour grading for emotional impact delivered as a graded, captioned, rights-cleared library rather than a folder of raw files.</p>
+          <p>Conferences and convenings, press conferences and CSR, corporate and factory tours, product and portfolio, executive portraits, and high-level or presidential coverage.</p>
+          <span class="tag">DaVinci Resolve</span><span class="tag">Graded &amp; captioned delivery</span>
+        </div>
+        <div class="case__media photo-carousel" id="photography-carousel" aria-roledescription="carousel" aria-label="Photography samples">
+          <style>
+          .photo-carousel__slide{ position:absolute; inset:0; opacity:0; transition:opacity .8s var(--ease); overflow:hidden; }
+          .photo-carousel__slide.is-active{ opacity:1; }
+          .photo-carousel__slide::before{ content:""; position:absolute; inset:0; background:var(--img) center/cover no-repeat; filter:blur(22px) brightness(.7); transform:scale(1.12); }
+          .photo-carousel__slide img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+          .photo-carousel__nav{ position:absolute; top:50%; transform:translateY(-50%); z-index:4; width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,.6); background:rgba(0,0,0,.35); color:#fff; font-size:22px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .25s var(--ease); }
+          .photo-carousel__nav:hover{ background:rgba(0,0,0,.6); }
+          .photo-carousel__nav--prev{ left:14px; }
+          .photo-carousel__nav--next{ right:14px; }
+          .photo-carousel__dots{ position:absolute; z-index:4; left:0; right:0; bottom:14px; display:flex; gap:8px; justify-content:center; }
+          .photo-carousel__dots button{ width:9px; height:9px; border-radius:50%; border:0; padding:0; background:rgba(255,255,255,.45); cursor:pointer; transition:background .25s var(--ease), transform .25s var(--ease); }
+          .photo-carousel__dots button.is-active{ background:#fff; transform:scale(1.25); }
+          </style>
+          <div class="photo-carousel__slide" style="--img:url('assets/photography-1.jpg')"><img src="assets/photography-1.jpg" alt="ORCGA Media photography — field and campaign coverage"></div>
+          <div class="photo-carousel__slide" style="--img:url('assets/photography-2.jpg')"><img src="assets/photography-2.jpg" alt="ORCGA Media photography — field and campaign coverage"></div>
+          <div class="photo-carousel__slide" style="--img:url('assets/photography-3.jpg')"><img src="assets/photography-3.jpg" alt="ORCGA Media photography — event and executive coverage"></div>
+          <div class="photo-carousel__slide" style="--img:url('assets/photography-4.jpg')"><img src="assets/photography-4.jpg" alt="ORCGA Media photography — event and executive coverage"></div>
+          <button type="button" class="photo-carousel__nav photo-carousel__nav--prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="photo-carousel__nav photo-carousel__nav--next" aria-label="Next photo">&#8250;</button>
+          <div class="photo-carousel__dots" aria-label="Choose photo"></div>
+          <script>
+          (function(){
+            var root=document.getElementById('photography-carousel');
+            if(!root) return;
+            var imgs=[].slice.call(root.querySelectorAll('.photo-carousel__slide'));
+            var dotsWrap=root.querySelector('.photo-carousel__dots');
+            var i=0, timer;
+            var dots=imgs.map(function(_,n){
+              var b=document.createElement('button');
+              b.type='button';
+              b.setAttribute('aria-label','Go to photo '+(n+1));
+              b.addEventListener('click',function(){ go(n); reset(); });
+              dotsWrap.appendChild(b);
+              return b;
+            });
+            function go(n){
+              imgs[i].classList.remove('is-active'); dots[i].classList.remove('is-active');
+              i=(n+imgs.length)%imgs.length;
+              imgs[i].classList.add('is-active'); dots[i].classList.add('is-active');
+            }
+            root.querySelector('.photo-carousel__nav--prev').addEventListener('click',function(){ go(i-1); reset(); });
+            root.querySelector('.photo-carousel__nav--next').addEventListener('click',function(){ go(i+1); reset(); });
+            function start(){ timer=setInterval(function(){ go(i+1); },5000); }
+            function reset(){ clearInterval(timer); start(); }
+            imgs[0].classList.add('is-active'); dots[0].classList.add('is-active');
+            start();
+          })();
+          </script>
+        </div>
+
+      </article>
+
+      <article class="case reveal" id="podcast">
+        <div>
+          <span class="kicker-navy">&mdash; Podcast &amp; audio</span>
+          <h2 class="h2" style="margin:12px 0 18px">Thought leadership</h2>
+          <p>Full podcast production recording, mixing, mastering and distribution plus sound design for film and EBU R128 compliant audio mastering for broadcast and streaming.</p>
+          <p>Built for series that carry a policy or advocacy agenda: episode architecture, guest preparation, and short-form cutdowns that travel further than the full episode.</p>
+          <span class="tag">Studio mastering</span><span class="tag">EBU R128 audio</span>
+        </div>
+        <div class="case__media is-playable" data-youtube="tU04Lx9ms9E" data-title="African Youth Bootcamp for Climate Change">
+          <img src="assets/african-youth-bootcamp.png" alt="African Youth Bootcamp for Climate Change" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <span class="work-card__play" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+        </div>
+      </article>
+
+      <article class="case case--flip reveal" id="digital">
+        <div>
+          <span class="kicker-navy">04 &mdash; Digital strategy</span>
+          <h2 class="h2" style="margin:12px 0 18px">Content that reaches the room it needs to</h2>
+          <p>Social content systems, motion graphics and titles, reels and short-form cutdowns, live streaming and multi-platform distribution with analytics to prove where the message landed.</p>
+          <p>Simultaneous broadcast to YouTube, Facebook and private servers, multi-camera setups with vision mixing, and bonded internet for field conditions.</p>
+          <span class="tag">Motion graphics</span><span class="tag">Multi-platform live</span>
+        </div>
+        <div class="case__media photo-carousel" id="digital-carousel" aria-roledescription="carousel" aria-label="Digital strategy samples">
+          <div class="photo-carousel__slide" style="--img:url('assets/digital-1.jpg')"><img src="assets/digital-1.jpg" alt="ORCGA Media digital strategy — live and multi-platform coverage"></div>
+          <div class="photo-carousel__slide" style="--img:url('assets/digital-2.jpg')"><img src="assets/digital-2.jpg" alt="ORCGA Media digital strategy — live and multi-platform coverage"></div>
+          <div class="photo-carousel__slide" style="--img:url('assets/digital-3.jpg')"><img src="assets/digital-3.jpg" alt="ORCGA Media digital strategy — live and multi-platform coverage"></div>
+          <button type="button" class="photo-carousel__nav photo-carousel__nav--prev" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="photo-carousel__nav photo-carousel__nav--next" aria-label="Next photo">&#8250;</button>
+          <div class="photo-carousel__dots" aria-label="Choose photo"></div>
+          <script>
+          (function(){
+            var root=document.getElementById('digital-carousel');
+            if(!root) return;
+            var imgs=[].slice.call(root.querySelectorAll('.photo-carousel__slide'));
+            var dotsWrap=root.querySelector('.photo-carousel__dots');
+            var i=0, timer;
+            var dots=imgs.map(function(_,n){
+              var b=document.createElement('button');
+              b.type='button';
+              b.setAttribute('aria-label','Go to photo '+(n+1));
+              b.addEventListener('click',function(){ go(n); reset(); });
+              dotsWrap.appendChild(b);
+              return b;
+            });
+            function go(n){
+              imgs[i].classList.remove('is-active'); dots[i].classList.remove('is-active');
+              i=(n+imgs.length)%imgs.length;
+              imgs[i].classList.add('is-active'); dots[i].classList.add('is-active');
+            }
+            root.querySelector('.photo-carousel__nav--prev').addEventListener('click',function(){ go(i-1); reset(); });
+            root.querySelector('.photo-carousel__nav--next').addEventListener('click',function(){ go(i+1); reset(); });
+            function start(){ timer=setInterval(function(){ go(i+1); },5000); }
+            function reset(){ clearInterval(timer); start(); }
+            imgs[0].classList.add('is-active'); dots[0].classList.add('is-active');
+            start();
+          })();
+          </script>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ TECHNICAL STANDARDS ============ -->
+  <section class="section section--ink">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Technical excellence</p>
+          <h2 class="h1">Global standards,<br>local capability</h2>
+        </div>
+        <p class="lead">The specification is not negotiable it is what makes your content usable by broadcasters, donors and partners without rework.</p>
+      </div>
+
+      <div class="rule-cols reveal">
+        <div class="rule-col">
+          <h3 class="h3">Broadcast quality</h3>
+          <p>Content produced to international broadcast specifications. We adhere to ITU-R standards for colour, sound and resolution, ensuring your message is ready for global distribution.</p>
+          <span class="tag">4K/6K RAW</span><span class="tag">EBU R128 audio</span>
+        </div>
+        <div class="rule-col">
+          <h3 class="h3">Inclusive accessibility</h3>
+          <p>Commitment to inclusive content. We provide WCAG-aligned graphics, multi-language subtitling and audio descriptions to ensure accessibility for all audiences.</p>
+          <span class="tag">Subtitles</span><span class="tag">Audio description</span>
+        </div>
+        <div class="rule-col">
+          <h3 class="h3">Agile field logistics</h3>
+          <p>Proven ability to deploy teams across East Africa. Our workflows include robust field safety protocols and professional raw footage archiving for long-term use.</p>
+          <span class="tag">Regional reach</span><span class="tag">Secure archiving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ M&E ============ -->
+  <section class="section section--surface" id="measurement">
+    <div class="wrap">
+      <div class="grid-2 grid-2--split">
+        <div class="reveal">
+          <p class="eyebrow">Measuring success</p>
+          <h2 class="h1">M&amp;E and<br>analytics</h2>
+          <p class="lead" style="margin-top:24px">Every piece of content is a strategic asset. We map deliverables to your indicators before a camera is switched on.</p>
+        </div>
+        <div class="grid-3 reveal" style="grid-template-columns:1fr">
+          <div class="card">
+            <h3 class="h4">Distribution analytics</h3>
+            <p>Reach, impressions and deep engagement metrics across every platform, so you can see how audiences actually behaved.</p>
+          </div>
+          <div class="card">
+            <h3 class="h4">Impact reporting</h3>
+            <p>Qualitative reporting on how media assets influenced policy discussions, community attitudes and behavioural change.</p>
+          </div>
+          <div class="card">
+            <h3 class="h4">KPI alignment</h3>
+            <p>Deliverables mapped directly to project indicators and donor requirements, ready to drop into your reporting cycle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGAGEMENT MODELS ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">How we work together</p>
+          <h2 class="h1">Engagement<br>models</h2>
+        </div>
+        <p class="lead">From a single production to a full-year content partnership. Rates are quoted against scope, request the current rate card and we'll send the full catalogue.</p>
+      </div>
+
+      <div class="grid-3 reveal">
+        <div class="card">
+          <span class="kicker-navy">Project</span>
+          <h3 class="h3" style="margin:10px 0 12px">Single production</h3>
+          <p>One film, one convening, one campaign. Scoped end to end with a formalised Statement of Work, two rounds of revisions and broadcast-ready delivery.</p>
+        </div>
+        <div class="card">
+          <span class="kicker-navy">Retainer</span>
+          <h3 class="h3" style="margin:10px 0 12px">Content partnership</h3>
+          <p>Quarterly field shoots, a steady flow of impact films, social cutdowns and photography, with priority scheduling and consistent visual language across the year.</p>
+        </div>
+        <div class="card">
+          <span class="kicker-navy">Advisory</span>
+          <h3 class="h3" style="margin:10px 0 12px">Strategic campaign</h3>
+          <p>Full campaign design with strategic advisory, comprehensive asset production, event coverage and impact reporting mapped to donor cycles.</p>
+        </div>
+      </div>
+
+      <div class="steps reveal" style="margin-top:clamp(52px,6vw,80px);padding-top:clamp(40px,4vw,56px);border-top:1px solid var(--line)">
+        <div class="step">
+          <span class="step__n">01</span>
+          <h3>Review &amp; select</h3>
+          <p>Review our partnership models and select the tier that best aligns with your organisational goals and campaign scale.</p>
+        </div>
+        <div class="step">
+          <span class="step__n">02</span>
+          <h3>Schedule call</h3>
+          <p>A 30-minute alignment call to discuss your specific needs, timelines and desired impact metrics.</p>
+        </div>
+        <div class="step">
+          <span class="step__n">03</span>
+          <h3>Formalise SOW</h3>
+          <p>We provide a formalised Statement of Work and contract to begin the partnership and production cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap">
+      <p class="eyebrow reveal">Rate card</p>
+      <h2 class="h-display reveal" style="max-width:16ch">Request the 2026 service catalogue</h2>
+      <p class="lead reveal" style="margin-top:24px;max-width:52ch">Full day rates, post-production, equipment hire, live streaming and partnership tiers — sent directly, scoped to your project.</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn--light" href="contact.html">Request rate card
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M9 1l4 4-4 4M13 5H0" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a class="btn btn--outline-light" href="work.html">See the work</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{FOOTER}}
+{{JS}}
+</body>
+</html>
+
